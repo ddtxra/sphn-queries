@@ -1,1 +1,1 @@
-# sphn-queries
+# Test for catalogue of queries
