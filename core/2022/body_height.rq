@@ -1,0 +1,16 @@
+    PREFIX sphn:<https://biomedit.ch/rdf/sphn-ontology/sphn#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    SELECT *
+    WHERE {
+	?resource a <https://biomedit.ch/rdf/sphn-ontology/sphn#BodyHeight> .
+		optional{ ?resource sphn:hasAdministrativeCase ?administrativecase_hasAdministrativeCase . }
+		optional{ ?resource sphn:hasDataProviderInstitute ?dataproviderinstitute_hasDataProviderInstitute . }
+		optional{ ?resource sphn:hasMeasurementDatetime ?measurementdatetime_hasMeasurementDatetime . }
+		optional{ ?resource sphn:hasQuantity/sphn:hasComparator ?quantity_hasComparator . }
+		optional{ ?resource sphn:hasQuantity/sphn:hasUnit/sphn:hasCode/sphn:hasCodeName ?quantity_hasCodeName . }
+		optional{ ?resource sphn:hasQuantity/sphn:hasUnit/sphn:hasCode/sphn:hasCodingSystemAndVersion ?quantity_hasCodingSystemAndVersion . }
+		optional{ ?resource sphn:hasQuantity/sphn:hasUnit/sphn:hasCode/sphn:hasIdentifier ?quantity_hasIdentifier . }
+		optional{ ?resource sphn:hasQuantity/sphn:hasValue ?quantity_hasValue . }
+		optional{ ?resource sphn:hasSubjectPseudoIdentifier ?subjectpseudoidentifier_hasSubjectPseudoIdentifier . }
+	}
