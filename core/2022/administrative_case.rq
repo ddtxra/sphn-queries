@@ -1,0 +1,23 @@
+PREFIX sphn:<https://biomedit.ch/rdf/sphn-ontology/sphn#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT *
+WHERE {
+    ?resource a sphn:AdministrativeCase .  
+    optional{ ?resource sphn:hasDataProviderInstitute / sphn:hasCode / sphn:hasIdentifier ?data_provider_institute}
+    # optional{ ?resource sphn:hasOriginLocation/sphn:hasDataProviderInstitute ?originLocation_hasDataProviderInstitute . }
+    optional{ ?resource sphn:hasOriginLocation/sphn:hasClass ?origin_location_class . }
+    optional{ ?resource sphn:hasOriginLocation/sphn:hasExact ?origin_location . }
+    optional{ ?resource sphn:hasIdentifier ?identifier . }
+    optional{ ?resource  sphn:hasCareHandling/sphn:hasTypeCode/rdf:type ?care_handly_type_code .
+    ?care_handly_type_code rdfs:label  ?care_handly_type_label
+    FILTER(strStarts(str(?care_handly_type_code), "http://snomed.info/id/")) . } 
+    optional{ ?resource sphn:hasCareHandling/sphn:hasTypeCode ?care_handly_type_code . }
+    # optional{ ?resource sphn:hasDischargeLocation/sphn:hasDataProviderInstitute ?dischargeLocation_hasDataProviderInstitute . }
+    optional{ ?resource sphn:hasDischargeLocation/sphn:hasClass ?discharge_location_class . }
+    optional{ ?resource sphn:hasDischargeLocation/sphn:hasExact ?discharge_location . }
+    optional{ ?resource sphn:hasAdmissionDateTime ?admission_date_time . }
+    optional{ ?resource sphn:hasDischargeDateTime ?discharge_date_time . }
+    #!filter
+    #!limit
+}
