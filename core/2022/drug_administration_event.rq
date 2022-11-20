@@ -1,0 +1,55 @@
+PREFIX sphn:<https://biomedit.ch/rdf/sphn-ontology/sphn#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    SELECT *
+    WHERE {
+	?resource a <https://biomedit.ch/rdf/sphn-ontology/sphn#DrugAdministrationEvent> .
+		optional{ ?resource sphn:hasAdministrableDoseForm/sphn:hasCode/sphn:hasCodeName ?administrabledoseform_has_code_name . }
+		optional{ ?resource sphn:hasAdministrableDoseForm/sphn:hasCode/sphn:hasCodingSystemAndVersion ?administrabledoseform_has_coding_system_and_version . }
+		optional{ ?resource sphn:hasAdministrableDoseForm/sphn:hasCode/sphn:hasIdentifier ?administrabledoseform_has_identifier . }
+		optional{ ?resource sphn:hasAdministrationRouteCode/sphn:hasCodeName ?administrationroutecode_has_code_name . }
+		optional{ ?resource sphn:hasAdministrationRouteCode/sphn:hasCodingSystemAndVersion ?administrationroutecode_has_coding_system_and_version . }
+		optional{ ?resource sphn:hasAdministrationRouteCode/sphn:hasIdentifier ?administrationroutecode_has_identifier . }
+		optional{ ?resource sphn:hasAdministrativeCase ?administrativecase_has_administrative_case . }
+		optional{ ?resource sphn:hasDataProviderInstitute ?dataproviderinstitute_has_dataprovider_institute . }
+		optional{ ?resource sphn:hasDrug/sphn:hasActiveIngredient/sphn:hasCode/sphn:hasCodeName ?drug_has_code_name . }
+		optional{ ?resource sphn:hasDrug/sphn:hasActiveIngredient/sphn:hasCode/sphn:hasCodingSystemAndVersion ?drug_has_coding_system_and_version . }
+		optional{ ?resource sphn:hasDrug/sphn:hasActiveIngredient/sphn:hasCode/sphn:hasIdentifier ?drug_hasidentifier . }
+		optional{ ?resource sphn:hasDrug/sphn:hasActiveIngredient/sphn:hasGenericName ?drug_has_generic_name . }
+		optional{ ?resource sphn:hasDrug/sphn:hasActiveIngredient/sphn:hasQuantity/sphn:hasComparator ?drug_has_comparator . }
+		optional{ ?resource sphn:hasDrug/sphn:hasActiveIngredient/sphn:hasQuantity/sphn:hasUnit/sphn:hasCode/sphn:hasCodeName ?drug_has_code_name . }
+		optional{ ?resource sphn:hasDrug/sphn:hasActiveIngredient/sphn:hasQuantity/sphn:hasUnit/sphn:hasCode/sphn:hasCodingSystemAndVersion ?drug_has_coding_system_and_version . }
+		optional{ ?resource sphn:hasDrug/sphn:hasActiveIngredient/sphn:hasQuantity/sphn:hasUnit/sphn:hasCode/sphn:hasIdentifier ?drug_has_identifier . }
+		optional{ ?resource sphn:hasDrug/sphn:hasActiveIngredient/sphn:hasQuantity/sphn:hasValue ?drug_has_value . }
+		optional{ ?resource sphn:hasDrug/sphn:hasInactiveIngredient/sphn:hasCode/sphn:hasCodeName ?drug_has_code_name . }
+		optional{ ?resource sphn:hasDrug/sphn:hasInactiveIngredient/sphn:hasCode/sphn:hasCodingSystemAndVersion ?drug_has_coding_system_and_version . }
+		optional{ ?resource sphn:hasDrug/sphn:hasInactiveIngredient/sphn:hasCode/sphn:hasIdentifier ?drug_has_identifier . }
+		optional{ ?resource sphn:hasDrug/sphn:hasInactiveIngredient/sphn:hasGenericName ?drug_has_generic_name . }
+		optional{ ?resource sphn:hasDrug/sphn:hasInactiveIngredient/sphn:hasQuantity/sphn:hasComparator ?drug_has_comparator . }
+		optional{ ?resource sphn:hasDrug/sphn:hasInactiveIngredient/sphn:hasQuantity/sphn:hasUnit/sphn:hasCode/sphn:hasCodeName ?drug_has_code_name . }
+		optional{ ?resource sphn:hasDrug/sphn:hasInactiveIngredient/sphn:hasQuantity/sphn:hasUnit/sphn:hasCode/sphn:hasCodingSystemAndVersion ?drug_has_coding_system_and_version . }
+		optional{ ?resource sphn:hasDrug/sphn:hasInactiveIngredient/sphn:hasQuantity/sphn:hasUnit/sphn:hasCode/sphn:hasIdentifier ?drug_has_identifier . }
+		optional{ ?resource sphn:hasDrug/sphn:hasInactiveIngredient/sphn:hasQuantity/sphn:hasValue ?drug_has_value . }
+		optional{ ?resource sphn:hasDrug/sphn:hasManufacturedDoseFormCode/sphn:hasCode/sphn:hasCodeName ?drug_has_code_name . }
+		optional{ ?resource sphn:hasDrug/sphn:hasManufacturedDoseFormCode/sphn:hasCode/sphn:hasCodingSystemAndVersion ?drug_has_coding_system_and_version . }
+		optional{ ?resource sphn:hasDrug/sphn:hasManufacturedDoseFormCode/sphn:hasCode/sphn:hasIdentifier ?drug_has_identifier . }
+		optional{ ?resource sphn:hasDrug/sphn:hasProductCode/sphn:hasCodeName ?drug_has_code_name . }
+		optional{ ?resource sphn:hasDrug/sphn:hasProductCode/sphn:hasCodingSystemAndVersion ?drug_has_coding_sytem_and_version . }
+		optional{ ?resource sphn:hasDrug/sphn:hasProductCode/sphn:hasIdentifier ?drug_has_identifier . }
+		optional{ ?resource sphn:hasDrugQuantity/sphn:hasComparator ?drugquantity_has_comparator . }
+		optional{ ?resource sphn:hasDrugQuantity/sphn:hasUnit/sphn:hasCode/sphn:hasCodeName ?drugquantity_has_code_name . }
+		optional{ ?resource sphn:hasDrugQuantity/sphn:hasUnit/sphn:hasCode/sphn:hasCodingSystemAndVersion ?drugquantity_has_coding_system_and_version . }
+		optional{ ?resource sphn:hasDrugQuantity/sphn:hasUnit/sphn:hasCode/sphn:hasIdentifier ?drugquantity_has_identifier . }
+		optional{ ?resource sphn:hasDrugQuantity/sphn:hasValue ?drugquantity_has_value . }
+		optional{ ?resource sphn:hasDuration/sphn:hasComparator ?duration_has_comparator . }
+		optional{ ?resource sphn:hasDuration/sphn:hasUnit/sphn:hasCode/sphn:hasCodeName ?duration_has_code_name . }
+		optional{ ?resource sphn:hasDuration/sphn:hasUnit/sphn:hasCode/sphn:hasCodingSystemAndVersion ?duration_has_coding_system_and_version . }
+		optional{ ?resource sphn:hasDuration/sphn:hasUnit/sphn:hasCode/sphn:hasIdentifier ?duration_has_identifier . }
+		optional{ ?resource sphn:hasDuration/sphn:hasValue ?duration_has_value . }
+		optional{ ?resource sphn:hasEndDatetime ?enddatetime_has_end_date_time . }
+		optional{ ?resource sphn:hasReasonToStopCode ?reasontostopcode_has_reason_to_stop_code . }
+		optional{ ?resource sphn:hasStartDatetime ?startdatetime_has_start_datetime . }
+		optional{ ?resource sphn:hasSubjectPseudoIdentifier ?subjectpseudoidentifier_has_subject_pseudo_identifier . }
+		optional{ ?resource sphn:hasTimePattern/sphn:hasTypeCode ?timepattern_has_type_code . }
+    #!filter
+	}
