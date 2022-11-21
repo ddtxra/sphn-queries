@@ -13,4 +13,6 @@
 		optional{ ?resource sphn:hasQuantity/sphn:hasUnit/sphn:hasCode/sphn:hasIdentifier ?quantity_hasIdentifier . }
 		optional{ ?resource sphn:hasQuantity/sphn:hasValue ?quantity_hasValue . }
 		optional{ ?resource sphn:hasSubjectPseudoIdentifier ?subjectpseudoidentifier_hasSubjectPseudoIdentifier . }
+        #!filter
+
 	}

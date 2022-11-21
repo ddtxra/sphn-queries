@@ -19,5 +19,4 @@ WHERE {
     optional{ ?resource sphn:hasAdmissionDateTime ?admission_date_time . }
     optional{ ?resource sphn:hasDischargeDateTime ?discharge_date_time . }
     #!filter
-    #!limit
 }

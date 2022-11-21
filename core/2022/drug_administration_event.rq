@@ -52,5 +52,4 @@ PREFIX sphn:<https://biomedit.ch/rdf/sphn-ontology/sphn#>
 		optional{ ?resource sphn:hasSubjectPseudoIdentifier ?subjectpseudoidentifier_has_subject_pseudo_identifier . }
 		optional{ ?resource sphn:hasTimePattern/sphn:hasTypeCode ?timepattern_has_type_code . }
 		#!filter
-		#!limit
 	}
