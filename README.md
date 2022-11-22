@@ -36,3 +36,15 @@ for i in range(len(keys)):
     df_counts = df_counts.replace(np.nan, 'nan')
     sns.barplot(data=df_counts, x="count", y=keys[i], ax=axs[i])
 ```
+
+with matplot lib
+```
+import matplotlib.pyplot as plt
+keys = ['origin_location_class', 'origin_location']
+fig, axs = plt.subplots(len(keys), figsize=(20, 10))
+for i in range(len(keys)):
+    df.value_counts(keys[i], dropna=False).plot(kind='barh', ax=axs[i], subplots=True)
+    plt.title(keys[i])
+    plt.tight_layout()
+    
+```
