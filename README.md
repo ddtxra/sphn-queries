@@ -55,6 +55,14 @@ sns.histplot(df_plot['admission_date_time'], bins=50)
 ```
 
 ```
+df_plot = df.replace(np.nan, 'nan')
+keys = ['origin_location_class', 'origin_location']
+fig, axs = plt.subplots(len(keys), figsize=(20, 10))
+for i in range(len(keys)):
+    sns.countplot(y=df_plot[keys[i]], ax=axs[i])
+```
+
+```
 sns.histplot((df_plot['discharge_date_time'] - df_plot['admission_date_time']).dt.days)
 plt.xlim([-20, 500])
 ```
