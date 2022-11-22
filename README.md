@@ -1,4 +1,4 @@
-# Test for catalogue of queries
+# Lib to explore SPHN datasets using python
 
 # Set up the connection
 
@@ -17,7 +17,7 @@ repo = SPHNRepository(sparql_endpoint, repository, catalog_uri)
 # Execute a query from the catalogue
 
 ```python
-df = repo.execute_query("core/2022/administrative_case", 10)
+df = repo.execute_query("core/2022/administrative_case", 200)
 ```
 
 # Explore data visually
@@ -42,14 +42,14 @@ for i in range(len(keys)):
 ```python
 sns.histplot(df_plot['admission_date_time'], bins=50)
 ```
-![time](assets/sns_2.PNG)
+![time](assets/sns_2.png)
 
 ```python
 sns.histplot((df_plot['discharge_date_time'] - df_plot['admission_date_time']).dt.days)
 plt.xlim([-20, 500])
 ```
 
-![time](assets/sns_3.PNG)
+![time](assets/sns_3.png)
 
 
 ## Using matplot lib
