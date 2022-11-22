@@ -3,16 +3,15 @@ import pandas as pd
 import urllib.parse
 
 class SPHNRepository:
-    
-    def __init__(self, sparql_endpoint, repository, prefixes, catalog_uri):
+
+    def __init__(self, sparql_endpoint, repository, catalog_uri):
         self.sparql_endpoint = sparql_endpoint
         self.repository = repository
         self.catalog_uri = catalog_uri
-        self.prefixes = prefixes
-        
-    def replacePrefixes(self, s):
-        for k in self.prefixes.keys():
-            s = s.replace(self.prefixes[k], k + ":")
+
+    def replacePrefixes(self, s, prefixes):
+        for k in prefixes.keys():
+            s = s.replace(prefixes[k], k + ":")
         return s
     
     def execute_query(self, concept, limit, debug = False):
@@ -23,6 +22,12 @@ class SPHNRepository:
         
         query = self.retrieve_query_from_catalog(concept)
         
+        #TODO should be created automatically from parsing the PREFIX query lines
+        prefixes = {
+            "sphn": "https://biomedit.ch/rdf/sphn-ontology/sphn#",
+            "resource": "https://biomedit.ch/rdf/sphn-resource/"
+        }
+
         if(limit > 0):
             query = query + ("LIMIT " + str(limit))
         if(debug):
@@ -47,7 +52,7 @@ class SPHNRepository:
             o = {}
             for k in l.keys():
                 if(l[k]["type"] == "uri"):
-                    o[k] = self.replacePrefixes(l[k]["value"])
+                    o[k] = self.replacePrefixes(l[k]["value"], prefixes)
                 elif("datatype" in l[k] and l[k]["datatype"] == "http://www.w3.org/2001/XMLSchema#dateTime"):
                     o[k] = pd.to_datetime(l[k]["value"])
                 else:
