@@ -49,11 +49,6 @@ for i in range(len(keys)):
     
 ```
 
-
-```
-sns.histplot(df_plot['admission_date_time'], bins=50)
-```
-
 ```
 df_plot = df.replace(np.nan, 'nan')
 keys = ['origin_location_class', 'origin_location']
@@ -62,8 +57,16 @@ for i in range(len(keys)):
     sns.countplot(y=df_plot[keys[i]], ax=axs[i])
 ```
 
+![bar](assets/bar_plots.PNG)
+
+
+```
+sns.histplot(df_plot['admission_date_time'], bins=50)
+```
+
 ```
 sns.histplot((df_plot['discharge_date_time'] - df_plot['admission_date_time']).dt.days)
 plt.xlim([-20, 500])
 ```
 
+![time](assets/time.PNG)
