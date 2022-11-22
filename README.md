@@ -48,3 +48,14 @@ for i in range(len(keys)):
     plt.tight_layout()
     
 ```
+
+
+```
+sns.histplot(df_plot['admission_date_time'], bins=50)
+```
+
+```
+sns.histplot((df_plot['discharge_date_time'] - df_plot['admission_date_time']).dt.days)
+plt.xlim([-20, 500])
+```
+
