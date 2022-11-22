@@ -1,4 +1,4 @@
-# Lib to explore SPHN datasets using a catalogue of queries
+# Explore SPHN datasets using a catalogue of queries
 
 # Set up the connection
 
